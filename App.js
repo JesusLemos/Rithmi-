@@ -1,19 +1,38 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
+import { Text, View, ScrollView,SectionList, StyleSheet } from 'react-native';
+
+
+
+
+
+
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+
+    }
+  }
+
+
+
+    componentDidMount(){
+    console.log('componentdidmount')
+
+
+    }
+
+
+  render() {
+
+
+
+  return(
+  <View>
+  <Text>Prueba</Text>
+  </View>)
+}
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
