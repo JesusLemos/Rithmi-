@@ -34,7 +34,37 @@ export default class App extends Component {
                  'hora':dayjs(lista[i].date, {utc:true}).locale('es').format('HH:mm'),
                  'fechalarga':dayjs(lista[i].date).locale('es').format('YYYY-MM-DD')});
            }
-         //  console.log('ampliado',this.state.ampliacionDatosAPI);
+        //Guardamos el nuevo array de objetos en una nueva variable
+        let ampliacionDatosAPI = this.state.ampliacionDatosAPI;
+
+        //Ordenamos por dia nuestro array de objetos
+
+           let  ordenadospordias = ampliacionDatosAPI.sort(function (a, b) {
+                return ( a.dia - b.dia)
+            })
+
+        //Datos organizados separados por dias
+            let datosOrganizado = [];
+            let grupoDias = [];
+
+            for(let i = 0; i <= 31;i++ ){
+
+                  for(let j = 0 ; j < ordenadospordias.length;j++){
+                    if( ordenadospordias[j].dia == i +1 ){
+                       grupoDias = [...grupoDias,
+                          ordenadospordias[j]
+                        ]
+
+                    }
+                  }
+
+                  datosOrganizado.push(grupoDias);
+                  grupoDias = [];
+
+                }
+
+
+
     }
 
 //Llama los datos de la api
