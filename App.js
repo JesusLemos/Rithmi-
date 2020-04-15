@@ -3,7 +3,7 @@ import axios from 'axios';
 import dayjs from 'dayjs';
 import { Text, View, ScrollView,SectionList, StyleSheet } from 'react-native';
 
-
+import Anomalia from './Components/Anomalia';
 
 
 
@@ -135,7 +135,7 @@ export default class App extends Component {
                       <View >
                         <Text>{item2.hora}</Text>
                         <Text>{item2.heartRate} ppm</Text>
-
+                         <Anomalia />
                       </View>
                       )}
 
