@@ -14,7 +14,9 @@ export default class App extends Component {
 
     this.state = {
         datosAPI:[],
-        ampliacionDatosAPI:[]
+        ampliacionDatosAPI:[],
+        datosODH:[],
+        estructurado:[]
     }
   }
 
@@ -69,6 +71,29 @@ export default class App extends Component {
                return b.hora.localeCompare(a.hora);
                     });
             }
+
+        this.setState({datosODH:datosOrganizado});
+
+        //Añadiremos un objeto con la fecha del dia mas el array que hemos ordenado anteoriormente
+
+
+              let nuevoarray=[];
+              let almacenarnuevoarray={};
+              for(let i=0;i<=27;i++){
+
+               let fechacompleta =dayjs(this.state.datosODH[i][0].fechalarga).$d;
+               let limitarfecha  = fechacompleta.toString().slice(0,15);
+
+
+                almacenarnuevoarray={
+                  fechacompleta: limitarfecha ,
+                  data:this.state.datosODH[i]
+                }
+
+                nuevoarray.push(almacenarnuevoarray);
+              }
+
+            this.setState({estructurado:nuevoarray});
 
 
     }
