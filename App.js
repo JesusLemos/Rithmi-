@@ -135,7 +135,7 @@ export default class App extends Component {
                       <View >
                         <Text>{item2.hora}</Text>
                         <Text>{item2.heartRate} ppm</Text>
-                         <Anomalia />
+                         <Anomalia anomalia={item2.hasAnomaly} />
                       </View>
                       )}
 

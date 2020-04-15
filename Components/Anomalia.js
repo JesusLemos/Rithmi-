@@ -17,13 +17,35 @@ export default class Anomalia extends Component {
 
    return (
 
-     <View >
-        <Text>Hola</Text>
-     </View>
-
+      <View >
+     {this.props.anomalia == true ?
+        <View style={styles.anomaliaRojo} >
+      </View>
+      :
+       <View style={styles.anomaliaGris} >
+           </View>
+ }
+      </View>
    );
 
  }
 
 }
 
+
+
+const styles = StyleSheet.create({
+
+  anomaliaGris:{
+     borderWidth: 10,
+       borderRadius: 50,
+       borderColor:"#6E6E6E",
+  },
+    anomaliaRojo:{
+       borderWidth: 10,
+         borderRadius: 50,
+         borderColor:"red",
+    },
+
+
+});
