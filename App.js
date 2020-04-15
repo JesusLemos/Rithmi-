@@ -126,22 +126,49 @@ export default class App extends Component {
 
 
   return(
-  <ScrollView>
+  <ScrollView style={styles.container}>
     {this.state.estructurado.map(item =>
          <View>
-          <Text>{item.fechacompleta}</Text>
 
-            {item.data.map(item2 =>
-                      <View >
-                        <Text>{item2.hora}</Text>
-                        <Text>{item2.heartRate} ppm</Text>
-                         <Anomalia anomalia={item2.hasAnomaly} />
-                      </View>
-                      )}
+              <Text  style={styles.fechacompleta}>{item.fechacompleta}</Text>
+
+                {item.data.map(item2 =>
+                          <View style={styles.dia} >
+                            <Text>{item2.hora}</Text>
+                            <Text>{item2.heartRate} ppm</Text>
+                             <Anomalia anomalia={item2.hasAnomaly} />
+                          </View>
+                          )}
 
           </View>
           )}
   </ScrollView>)
 }
 }
+
+
+
+const styles = StyleSheet.create({
+  container: {
+    marginTop: 50,
+    color:'blue',
+  },
+
+  dia:{
+  marginTop: 10,
+  marginBottom: 10,
+  flexDirection:'row',
+  justifyContent:'space-around',
+  },
+
+    fechacompleta:{
+        marginTop:20,
+        marginBottom:5,
+        fontSize:24,
+        color:'blue',
+        marginLeft:15
+
+    }
+
+});
 
