@@ -130,6 +130,15 @@ export default class App extends Component {
     {this.state.estructurado.map(item =>
          <View>
           <Text>{item.fechacompleta}</Text>
+
+            {item.data.map(item2 =>
+                      <View >
+                        <Text>{item2.hora}</Text>
+                        <Text>{item2.heartRate} ppm</Text>
+
+                      </View>
+                      )}
+
           </View>
           )}
   </ScrollView>)
