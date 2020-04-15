@@ -126,9 +126,13 @@ export default class App extends Component {
 
 
   return(
-  <View>
-  <Text>Prueba</Text>
-  </View>)
+  <ScrollView>
+    {this.state.estructurado.map(item =>
+         <View>
+          <Text>{item.fechacompleta}</Text>
+          </View>
+          )}
+  </ScrollView>)
 }
 }
 
