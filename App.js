@@ -63,6 +63,12 @@ export default class App extends Component {
 
                 }
 
+        //Datos organizados por horas
+         for(let i = 0; i <= 31;i++ ){
+              datosOrganizado[i].sort(function (a, b) {
+               return b.hora.localeCompare(a.hora);
+                    });
+            }
 
 
     }
